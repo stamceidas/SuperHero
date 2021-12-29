@@ -53,25 +53,13 @@ let baseUrl = environment.baseURL()
 
 public struct Path {
     
-    public init() {}
-    public var all: String { return "\(baseUrl)/all.json" }
-    
-    struct User {
+    public struct Hero {
+        public init() {}
         
-        var getProfile: String { return "\(baseUrl)/profile" }
+        public var all: String { return "\(baseUrl)/all.json" }
         
-        var deleteUser: (Int) -> String = { userID in
-            return "\(baseUrl)/profile/\(String(userID))"
-        }
-        
-        struct Task {
-            
-            var getTasks: String { return "\(baseUrl)/tasks" }
-            
-            var getTaskDetail: (Int, Int) -> String = { userID, taskID in
-                return "\(baseUrl)/profile/\(String(userID))/task/\(String(taskID))"
-            }
-            
+        public var getHero: (Int) -> String = { heroID in
+            return "\(baseUrl)/id/\(String(heroID)).json"
         }
     }
 }

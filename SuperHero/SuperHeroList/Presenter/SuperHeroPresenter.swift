@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SuperHeroPresenter : SuperHeroPresenterProtocol {    
+class SuperHeroPresenter : SuperHeroPresenterProtocol {
     
     /* Then presenter has two properties :
      The first one is the dataSource. which is owned by the presenter.
@@ -23,10 +23,6 @@ class SuperHeroPresenter : SuperHeroPresenterProtocol {
         assert(self.view == nil, "Cannot attach view twice")
         self.view = view
         //Not implemented
-    }
-    
-    func heroSelected(id: Int) {
-        //self.view.
     }
     
     func loadHeroes() {

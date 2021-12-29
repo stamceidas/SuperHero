@@ -19,4 +19,15 @@ class SuperHeroServices {
             completion(result ?? [], error)
         }
     }
+    
+    func getHero(heroID: Int, parameters: [String: Any]? = [:], completion: @escaping (RootElement?, Error?) -> ()) {
+        // api
+        let api = SuperHeroDetailAPI(heroID: heroID)
+        // api loader
+        let apiTaskLoader = APILoader(apiRequest: api)
+        
+        apiTaskLoader.loadAPIRequest(requestData: parameters ?? [:]) { (result, error) in
+            completion(result ?? nil, error)
+        }
+    }
 }

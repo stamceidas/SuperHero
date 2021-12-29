@@ -10,6 +10,5 @@ import Foundation
 protocol SuperHeroPresenterProtocol  {
     func attach(_ view: SuperHeroViewProtocol)
 //    //Then trafficLightColorSelected will be used to forward the event of selecting a trafic Color from the view to the presenter.
-    func heroSelected(id: Int)
     func loadHeroes()
 }

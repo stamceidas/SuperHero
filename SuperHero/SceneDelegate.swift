@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       
         let window = UIWindow(windowScene: windowScene)
         let vc = SuperHeroFactory.getSuperHeroViewController()
-        window.rootViewController = vc // Your initial view controller.
+        window.rootViewController = UINavigationController(rootViewController: vc) // Your initial view controller.
         window.makeKeyAndVisible()
         self.window = window
     }

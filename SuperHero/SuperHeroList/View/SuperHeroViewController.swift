@@ -30,12 +30,12 @@ class SuperHeroViewController: UIViewController, UITableViewDelegate {
         }
     }
     let tableView = UITableView()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupTableView()        
+        setupTableView()
+        self.title = "Super Heroes"
         self.presenter.attach(self)
         self.presenter.loadHeroes()
     }
@@ -69,6 +69,7 @@ extension SuperHeroViewController: UITableViewDataSource {
     }
 }
 
+// MARK: View Protocol
 extension SuperHeroViewController: SuperHeroViewProtocol {
     func displayTrafficLight(description: String) {
         return
@@ -79,8 +80,15 @@ extension SuperHeroViewController: SuperHeroViewProtocol {
     }
 }
 
+// MARK: Navigation
 extension SuperHeroViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.heroSelected(id: heroes[indexPath.row].id)
+        let heroID = heroes[indexPath.row].id
+        navigateToDetailView(heroID: heroID)
+    }
+    
+    func navigateToDetailView(heroID: Int) {
+        let detailVC = SuperHeroDetailFactory.getSuperHeroDetailViewController(with: heroID)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
