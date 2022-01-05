@@ -17,15 +17,14 @@ class SuperHeroDetailDataSource: SuperHeroDetailDataSourceProtocol  {
         // self.environment = environment
         self.client = client
     }
-    func getHero(heroID: Int, callBack: @escaping (SuperHero?) -> Void) {
-        client?.getHero(heroID: heroID, parameters: [:]) { heroes, error in
-            guard let heroe = heroes else {
-                print(error ?? "error")
-                callBack(nil)
-                return
+    func getHero(heroID: Int, callBack: @escaping (Result<SuperHero, Error>) -> Void) {
+        client?.getHero(heroID: heroID, parameters: [:]) { result in
+            switch result {
+            case .success(let model):
+                callBack(.success(model))
+            case .failure(let error):
+                callBack(.failure(error))
             }
-            print(heroe.name)
-            callBack(heroe)
         }
     }
     

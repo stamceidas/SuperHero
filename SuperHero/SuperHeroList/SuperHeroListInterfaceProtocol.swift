@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SuperHeroListInterfaceProtocol {
-    func getAllHeroes(parameters: [String: Any], completion: @escaping ([SuperHero], Error?) -> ())
+    func getAllHeroes(parameters: [String: Any], completion: @escaping (Result<[SuperHero], Error>) -> ())
 }

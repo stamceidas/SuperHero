@@ -7,5 +7,5 @@
 import Foundation
 
 protocol SuperHeroDetailInterfaceProtocol {
-    func getHero(heroID: Int, parameters: [String: Any], completion: @escaping (SuperHero?, Error?) -> ())
+    func getHero(heroID: Int, parameters: [String: Any], completion: @escaping (Result<SuperHero, Error>) -> ())
 }

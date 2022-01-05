@@ -10,7 +10,7 @@ import Networking
 
 final class SuperHeroListInterfaceImpl: SuperHeroListInterfaceProtocol {
 
-    func getAllHeroes(parameters: [String: Any] = [:], completion: @escaping ([SuperHero], Error?) -> ()){
+    func getAllHeroes(parameters: [String: Any] = [:], completion: @escaping (Result<[SuperHero], Error>) -> ()){
         // api
         let api = SuperHeroAPI()
         // api loader
@@ -19,13 +19,9 @@ final class SuperHeroListInterfaceImpl: SuperHeroListInterfaceProtocol {
         apiTaskLoader.loadAPIRequest(requestData: parameters) { result in
             switch result {
             case .success(let model):
-                guard let model = model else {
-                    completion([], nil)
-                    return
-                }
-                completion(model.filter{ $0.id <= 20 }, nil)
+                completion(.success(model.filter{ $0.id <= 20 }))
             case .failure(let error):
-                completion([], error)
+                completion(.failure(error))
             }
         }
     }

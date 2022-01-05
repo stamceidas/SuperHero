@@ -24,7 +24,7 @@ public struct SuperHeroAPI: APIHandler {
         return request
     }
     
-    public func parseResponse(data: Data) throws -> [SuperHero]? {
+    public func parseResponse(data: Data) throws -> [SuperHero] {
         return try defaultParseResponse(data: data)
     }
 }
@@ -48,7 +48,7 @@ public struct SuperHeroDetailAPI: APIHandler {
         return request
     }
     
-    public func parseResponse(data: Data) throws -> SuperHero? {
+    public func parseResponse(data: Data) throws -> SuperHero {
         return try defaultParseResponse(data: data)
     }
 }

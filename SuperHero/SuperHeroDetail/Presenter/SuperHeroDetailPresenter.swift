@@ -26,15 +26,21 @@ final class SuperHeroDetailPresenter : SuperHeroDetailPresenterProtocol {
     }
     
     func loadHero(heroId: Int) {
-        dataSource.getHero(heroID: heroId) { hero in
-            guard let hero = hero else { return }
-            let uihero = SuperHeroDetailModel(name: hero.name,
-                                              intelligence: String(hero.powerstats.intelligence),
-                                              strength: String(hero.powerstats.strength),
-                                              speed: String(hero.powerstats.speed),
-                                              durability: String(hero.powerstats.durability),
-                                              imageUrl: hero.images.md)
-            self.view?.updateView(hero: uihero)
+        dataSource.getHero(heroID: heroId) { result in
+            switch result {
+            case .success(let hero):
+                let uihero = SuperHeroDetailModel(name: hero.name,
+                                                  intelligence: String(hero.powerstats.intelligence),
+                                                  strength: String(hero.powerstats.strength),
+                                                  speed: String(hero.powerstats.speed),
+                                                  durability: String(hero.powerstats.durability),
+                                                  imageUrl: hero.images.md)
+                self.view?.updateView(hero: uihero)
+            case .failure(let error):
+                print(error)
+                return                
+            }
+            
         }
     }
  

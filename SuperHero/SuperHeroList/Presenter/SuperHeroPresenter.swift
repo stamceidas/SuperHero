@@ -26,13 +26,19 @@ final class SuperHeroPresenter : SuperHeroPresenterProtocol {
     }
     
     func loadHeroes() {
-        dataSource.getAllHeroes { heroes in
-            var uiheroes: [SuperHeroCellModel] = []
-            heroes?.forEach{ hero in
-                let hero = SuperHeroCellModel(id: hero.id, name: hero.name, imageUrl: hero.images.xs)
-                uiheroes.append(hero)
+        dataSource.getAllHeroes { result in
+            switch result {
+            case .success(let heroes):
+                var uiheroes: [SuperHeroCellModel] = []
+                heroes.forEach{ hero in
+                    let hero = SuperHeroCellModel(id: hero.id, name: hero.name, imageUrl: hero.images.xs)
+                    uiheroes.append(hero)
+                }
+                self.view?.updateView(heroes: uiheroes)
+            case .failure(let error):
+                print(error)
             }
-            self.view?.updateView(heroes: uiheroes)
+
         }
     }
  
