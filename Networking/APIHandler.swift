@@ -67,18 +67,12 @@ extension RequestHandler {
     /// prepares httpbody
     public func set(_ parameters: [String: Any], urlRequest: inout URLRequest) {
         // http body
-        if parameters.count != 0 {
-            if let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
-                urlRequest.httpBody = jsonData
-            }
+        guard parameters.count != 0 else { return }
+        
+        if let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
+            urlRequest.httpBody = jsonData
         }
     }
-}
-
-
-// MARK: - Response
-public protocol Response: Codable {
-    //var httpStatus: Int { set get }
 }
 
 extension ResponseHandler {
@@ -86,12 +80,10 @@ extension ResponseHandler {
     public func defaultParseResponse<T: Codable>(data: Data) throws -> T {
 
         let jsonDecoder = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-
-        if let body = try? jsonDecoder.decode(T.self, from: data) {
-            return body
-        } else {
+        
+        guard let body = try? jsonDecoder.decode(T.self, from: data) else {
             throw UnknownParseError()
         }
+        return body
     }
 }
