@@ -988,7 +988,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A735D75126DD04D81EE166C /* Pods-SuperHero.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1010,7 +1009,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F28308AE24BC240722A18368 /* Pods-SuperHero.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1032,7 +1030,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6714C93A2425E2A122ECFB3 /* Pods-SuperHeroTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4P72QP5NQ;
@@ -1055,7 +1052,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCB01CE2EA35A7B5FE53543F /* Pods-SuperHeroTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4P72QP5NQ;
@@ -1078,7 +1074,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5491E222EF61CF0281BEA2F7 /* Pods-SuperHero-SuperHeroUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4P72QP5NQ;
 				INFOPLIST_FILE = SuperHeroUITests/Info.plist;
@@ -1099,7 +1094,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A91512352547B0577A401F54 /* Pods-SuperHero-SuperHeroUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4P72QP5NQ;
 				INFOPLIST_FILE = SuperHeroUITests/Info.plist;
@@ -1176,7 +1170,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B191E9B873C8ED56797242C /* Pods-Networking-NetworkingTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4P72QP5NQ;
 				INFOPLIST_FILE = NetworkingTests/Info.plist;
@@ -1197,7 +1190,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0FE174F705FDF9E10786BCBA /* Pods-Networking-NetworkingTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4P72QP5NQ;
 				INFOPLIST_FILE = NetworkingTests/Info.plist;
