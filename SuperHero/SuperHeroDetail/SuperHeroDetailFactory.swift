@@ -8,9 +8,10 @@
 import Foundation
 import UIKit
 
-class SuperHeroDetailFactory {
-    static func getSuperHeroDetailViewController(with heroID: Int) -> UIViewController {
-        let dataSource =  SuperHeroDetailDataSource.init()
+class SuperHeroDetailFactoryImpl: SuperHeroDetailFactoryProtocol {
+    func getSuperHeroDetailViewController(with heroID: Int) -> UIViewController {
+        let clientImpl = SuperHeroDetailInterfaceImpl()
+        let dataSource =  SuperHeroDetailDataSource.init(client: clientImpl)
         let presenter = SuperHeroDetailPresenter.init(dataSource: dataSource)
         let vc = SuperHeroDetailViewController.init(with: presenter, heroID: heroID)
         return vc
