@@ -20,19 +20,23 @@ public class APILoader<T: APIHandler> {
     }
     
     public func loadAPIRequest(requestData: T.RequestDataType,
-                        completionHandler: @escaping (T.ResponseDataType?, Error?) -> ()) {
+                        completionHandler: @escaping (Result<T.ResponseDataType, Error>) -> ()) {
 
         // prepare url request
         let urlRequest = apiRequest.makeRequest(from: requestData).urlRequest
         // do session task
         urlSession.dataTask(with: urlRequest) { data, response, error in
-            guard let data = data else { return completionHandler(nil, error) }
+            guard let data = data else { return }
             // parse response
             do {
                 let parsedResponse = try self.apiRequest.parseResponse(data: data)
-                return completionHandler(parsedResponse, nil)
+                DispatchQueue.main.async {
+                    completionHandler(.success(parsedResponse))
+                }
             } catch {
-                return completionHandler(nil, error)
+                DispatchQueue.main.async {
+                    completionHandler(.failure(error))
+                }
             }
         }.resume()
     }

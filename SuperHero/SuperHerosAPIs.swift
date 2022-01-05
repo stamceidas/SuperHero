@@ -12,7 +12,7 @@ public struct SuperHeroAPI: APIHandler {
     public init() {}
     public func makeRequest(from parameters: [String: Any]) -> Request {
         // prepare url
-        let url = URL(string: Path.Hero().all)
+        let url = Path.Hero().all
         var urlRequest = URLRequest(url: url!)
         // set http method type
         urlRequest.httpMethod = HTTPMethod.get.rawValue
@@ -24,7 +24,7 @@ public struct SuperHeroAPI: APIHandler {
         return request
     }
     
-    public func parseResponse(data: Data) throws -> [RootElement]? {
+    public func parseResponse(data: Data) throws -> [SuperHero]? {
         return try defaultParseResponse(data: data)
     }
 }
@@ -36,7 +36,7 @@ public struct SuperHeroDetailAPI: APIHandler {
     }
     public func makeRequest(from parameters: [String: Any]) -> Request {
         // prepare url
-        let url = URL(string: Path.Hero().getHero(heroID))
+        let url = Path.Hero().getHero(heroID)
         var urlRequest = URLRequest(url: url!)
         // set http method type
         urlRequest.httpMethod = HTTPMethod.get.rawValue
@@ -48,7 +48,7 @@ public struct SuperHeroDetailAPI: APIHandler {
         return request
     }
     
-    public func parseResponse(data: Data) throws -> RootElement? {
+    public func parseResponse(data: Data) throws -> SuperHero? {
         return try defaultParseResponse(data: data)
     }
 }

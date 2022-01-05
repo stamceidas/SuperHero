@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Networking
 
 protocol SuperHeroListInterfaceProtocol {
     func getAllHeroes(parameters: [String: Any], completion: @escaping ([SuperHero], Error?) -> ())

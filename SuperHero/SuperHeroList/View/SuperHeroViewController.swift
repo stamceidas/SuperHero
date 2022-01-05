@@ -11,10 +11,12 @@ import Kingfisher
 class SuperHeroViewController: UIViewController, UITableViewDelegate {
 
 
-    let presenter: SuperHeroPresenterProtocol
+    private let presenter: SuperHeroPresenterProtocol
+    private let detailFactory: SuperHeroDetailFactoryProtocol?
     
-    required init(with presenter: SuperHeroPresenterProtocol) {
+    required init(with presenter: SuperHeroPresenterProtocol, detailFactory: SuperHeroDetailFactoryProtocol?) {
         self.presenter = presenter
+        self.detailFactory = detailFactory
         super.init(nibName: String(describing: type(of: self)), bundle: nil)
     }
     
@@ -22,14 +24,12 @@ class SuperHeroViewController: UIViewController, UITableViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var heroes: [RootElement] = [] {
+    private var heroes: [SuperHeroCellModel] = [] {
         didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            self.tableView.reloadData()
         }
     }
-    let tableView = UITableView()
+    private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ extension SuperHeroViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let hero = heroes[indexPath.row]
         cell.textLabel?.text = hero.name
-        cell.imageView?.kf.setImage(with: URL(string: hero.images.xs)) { result in
+        cell.imageView?.kf.setImage(with: URL(string: hero.imageUrl)) { result in
             cell.setNeedsLayout()
         }
         cell.selectionStyle = .none
@@ -75,7 +75,7 @@ extension SuperHeroViewController: SuperHeroViewProtocol {
         return
     }
     
-    func updateView(heroes: [RootElement]) {
+    func updateView(heroes: [SuperHeroCellModel]) {
         self.heroes = heroes
     }
 }
@@ -88,7 +88,8 @@ extension SuperHeroViewController {
     }
     
     func navigateToDetailView(heroID: Int) {
-        let detailVC = SuperHeroDetailFactory.getSuperHeroDetailViewController(with: heroID)
+        guard let detailVC = detailFactory?.getSuperHeroDetailViewController(with: heroID)
+            else { return }
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

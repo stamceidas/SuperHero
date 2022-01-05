@@ -39,18 +39,13 @@ class SuperHeroDetailViewController: UIViewController {
 }
 
 extension SuperHeroDetailViewController: SuperHeroDetailViewProtocol {
-    func updateView(hero: RootElement) {
-        DispatchQueue.main.async {
-            self.nameLbl.text = hero.name
-            self.intelligenceLbl.text = String(hero.powerstats.intelligence)
-            self.strengthLbl.text = String(hero.powerstats.strength)
-            self.speedLbl.text = String(hero.powerstats.speed)
-            self.durabilityLbl.text = String(hero.powerstats.durability)
-            self.imageView.kf.setImage(with: URL(string: hero.images.md)) { _ in
-                self.view.setNeedsLayout()
-            }
-            self.title = hero.name
-        }
-        
+    func updateView(hero: SuperHeroDetailModel) {
+        self.nameLbl.text = hero.name
+        self.intelligenceLbl.text = hero.intelligence
+        self.strengthLbl.text = hero.strength
+        self.speedLbl.text = hero.speed
+        self.durabilityLbl.text = hero.durability
+        self.imageView.kf.setImage(with: URL(string: hero.imageUrl))
+        self.title = hero.name
     }
 }

@@ -19,7 +19,7 @@
 		6D3EDA5A2779CA4700F150FD /* SuperHeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA592779CA4700F150FD /* SuperHeroTests.swift */; };
 		6D3EDA652779CA4700F150FD /* SuperHeroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA642779CA4700F150FD /* SuperHeroUITests.swift */; };
 		6D3EDA862779E9E400F150FD /* SuperHerosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA852779E9E400F150FD /* SuperHerosModel.swift */; };
-		6D3EDA882779F31800F150FD /* SuperHeroServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA872779F31800F150FD /* SuperHeroServices.swift */; };
+		6D3EDA882779F31800F150FD /* SuperHeroListInterfaceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA872779F31800F150FD /* SuperHeroListInterfaceImpl.swift */; };
 		6D3EDA8E277A0DF800F150FD /* SuperHeroDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA8D277A0DF800F150FD /* SuperHeroDataSource.swift */; };
 		6D3EDA90277A0EA300F150FD /* SuperHeroDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA8F277A0EA300F150FD /* SuperHeroDataSourceProtocol.swift */; };
 		6D3EDA92277A112F00F150FD /* SuperHeroFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA91277A112F00F150FD /* SuperHeroFactory.swift */; };
@@ -35,7 +35,6 @@
 		6D3EDABD277B0B9A00F150FD /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA7D2779DC2900F150FD /* APIHandler.swift */; };
 		6D3EDABE277B0B9A00F150FD /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA772779CB3000F150FD /* HTTPMethod.swift */; };
 		6D3EDAC0277B0CEE00F150FD /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA812779E29B00F150FD /* ServiceConstants.swift */; };
-		6D3EDAC2277B31EA00F150FD /* SuperHerosAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA832779E89800F150FD /* SuperHerosAPIs.swift */; };
 		6D3EDAC6277B38E500F150FD /* SuperHeroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3EDAC5277B38E500F150FD /* SuperHeroViewController.xib */; };
 		6D3EDACE277C7AEA00F150FD /* SuperHeroDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDACD277C7AEA00F150FD /* SuperHeroDetailDataSource.swift */; };
 		6D3EDAD0277C7B0100F150FD /* SuperHeroDetailsDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDACF277C7B0100F150FD /* SuperHeroDetailsDataSourceProtocol.swift */; };
@@ -45,6 +44,13 @@
 		6D3EDAD8277C7C4100F150FD /* SuperHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDAD7277C7C4100F150FD /* SuperHeroDetailViewController.swift */; };
 		6D3EDADA277C7CD400F150FD /* SuperHeroDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3EDAD9277C7CD400F150FD /* SuperHeroDetailViewController.xib */; };
 		6D3EDADC277C80D600F150FD /* SuperHeroDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDADB277C80D600F150FD /* SuperHeroDetailFactory.swift */; };
+		6DE93A9927844D4C0071BE12 /* SuperHeroListInterfaceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE93A9827844D4C0071BE12 /* SuperHeroListInterfaceProtocol.swift */; };
+		6DE93A9B27844DE40071BE12 /* SuperHeroDetailInterfaceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE93A9A27844DE40071BE12 /* SuperHeroDetailInterfaceProtocol.swift */; };
+		6DE93A9D27844F2F0071BE12 /* SuperHeroDetailInterfaceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE93A9C27844F2F0071BE12 /* SuperHeroDetailInterfaceImpl.swift */; };
+		6DE93AAE278481C00071BE12 /* SuperHeroDetailFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE93AAD278481C00071BE12 /* SuperHeroDetailFactoryProtocol.swift */; };
+		6DE93AB2278493920071BE12 /* SuperHerosAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3EDA832779E89800F150FD /* SuperHerosAPIs.swift */; };
+		6DE93AB4278597490071BE12 /* SuperHeroCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE93AB3278597490071BE12 /* SuperHeroCellModel.swift */; };
+		6DE93AB6278597790071BE12 /* SuperHeroDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE93AB5278597790071BE12 /* SuperHeroDetailModel.swift */; };
 		DB82F7132188CBCC995FEBBF /* Pods_SuperHeroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B29DFCFAA33CF277176AB638 /* Pods_SuperHeroTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,7 +130,7 @@
 		6D3EDA812779E29B00F150FD /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		6D3EDA832779E89800F150FD /* SuperHerosAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHerosAPIs.swift; sourceTree = "<group>"; };
 		6D3EDA852779E9E400F150FD /* SuperHerosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHerosModel.swift; sourceTree = "<group>"; };
-		6D3EDA872779F31800F150FD /* SuperHeroServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroServices.swift; sourceTree = "<group>"; };
+		6D3EDA872779F31800F150FD /* SuperHeroListInterfaceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroListInterfaceImpl.swift; sourceTree = "<group>"; };
 		6D3EDA8D277A0DF800F150FD /* SuperHeroDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDataSource.swift; sourceTree = "<group>"; };
 		6D3EDA8F277A0EA300F150FD /* SuperHeroDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDataSourceProtocol.swift; sourceTree = "<group>"; };
 		6D3EDA91277A112F00F150FD /* SuperHeroFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroFactory.swift; sourceTree = "<group>"; };
@@ -146,6 +152,12 @@
 		6D3EDAD7277C7C4100F150FD /* SuperHeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailViewController.swift; sourceTree = "<group>"; };
 		6D3EDAD9277C7CD400F150FD /* SuperHeroDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuperHeroDetailViewController.xib; sourceTree = "<group>"; };
 		6D3EDADB277C80D600F150FD /* SuperHeroDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailFactory.swift; sourceTree = "<group>"; };
+		6DE93A9827844D4C0071BE12 /* SuperHeroListInterfaceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroListInterfaceProtocol.swift; sourceTree = "<group>"; };
+		6DE93A9A27844DE40071BE12 /* SuperHeroDetailInterfaceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailInterfaceProtocol.swift; sourceTree = "<group>"; };
+		6DE93A9C27844F2F0071BE12 /* SuperHeroDetailInterfaceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailInterfaceImpl.swift; sourceTree = "<group>"; };
+		6DE93AAD278481C00071BE12 /* SuperHeroDetailFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailFactoryProtocol.swift; sourceTree = "<group>"; };
+		6DE93AB3278597490071BE12 /* SuperHeroCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroCellModel.swift; sourceTree = "<group>"; };
+		6DE93AB5278597790071BE12 /* SuperHeroDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailModel.swift; sourceTree = "<group>"; };
 		7BFB8D37C2091BEF695D8DE4 /* Pods-Networking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.release.xcconfig"; path = "Target Support Files/Pods-Networking/Pods-Networking.release.xcconfig"; sourceTree = "<group>"; };
 		9A735D75126DD04D81EE166C /* Pods-SuperHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHero.debug.xcconfig"; path = "Target Support Files/Pods-SuperHero/Pods-SuperHero.debug.xcconfig"; sourceTree = "<group>"; };
 		9B191E9B873C8ED56797242C /* Pods-Networking-NetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking-NetworkingTests.debug.xcconfig"; path = "Target Support Files/Pods-Networking-NetworkingTests/Pods-Networking-NetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -263,10 +275,10 @@
 		6D3EDA412779CA3200F150FD /* SuperHero */ = {
 			isa = PBXGroup;
 			children = (
+				6D3EDA832779E89800F150FD /* SuperHerosAPIs.swift */,
+				6D3EDA852779E9E400F150FD /* SuperHerosModel.swift */,
 				6D3EDAC7277C6F7500F150FD /* SuperHeroList */,
 				6D3EDAC8277C6F8A00F150FD /* SuperHeroDetail */,
-				6D3EDA832779E89800F150FD /* SuperHerosAPIs.swift */,
-				6D3EDA872779F31800F150FD /* SuperHeroServices.swift */,
 				6D3EDA422779CA3200F150FD /* AppDelegate.swift */,
 				6D3EDA442779CA3200F150FD /* SceneDelegate.swift */,
 				6D3EDA4B2779CA4600F150FD /* Assets.xcassets */,
@@ -297,7 +309,7 @@
 		6D3EDA89277A0DA400F150FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6D3EDA852779E9E400F150FD /* SuperHerosModel.swift */,
+				6DE93AB3278597490071BE12 /* SuperHeroCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,6 +372,8 @@
 				6D3EDA8B277A0DC600F150FD /* Presenter */,
 				6D3EDA8A277A0DB700F150FD /* View */,
 				6D3EDA89277A0DA400F150FD /* Models */,
+				6DE93A9827844D4C0071BE12 /* SuperHeroListInterfaceProtocol.swift */,
+				6D3EDA872779F31800F150FD /* SuperHeroListInterfaceImpl.swift */,
 			);
 			path = SuperHeroList;
 			sourceTree = "<group>";
@@ -367,11 +381,14 @@
 		6D3EDAC8277C6F8A00F150FD /* SuperHeroDetail */ = {
 			isa = PBXGroup;
 			children = (
+				6DE93AAD278481C00071BE12 /* SuperHeroDetailFactoryProtocol.swift */,
 				6D3EDADB277C80D600F150FD /* SuperHeroDetailFactory.swift */,
 				6D3EDAC9277C6F9700F150FD /* DataSource */,
 				6D3EDACA277C6FA500F150FD /* Presenter */,
 				6D3EDACB277C6FBB00F150FD /* View */,
 				6D3EDACC277C6FD100F150FD /* Models */,
+				6DE93A9A27844DE40071BE12 /* SuperHeroDetailInterfaceProtocol.swift */,
+				6DE93A9C27844F2F0071BE12 /* SuperHeroDetailInterfaceImpl.swift */,
 			);
 			path = SuperHeroDetail;
 			sourceTree = "<group>";
@@ -407,6 +424,7 @@
 		6D3EDACC277C6FD100F150FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6DE93AB5278597790071BE12 /* SuperHeroDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -769,19 +787,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D3EDAC2277B31EA00F150FD /* SuperHerosAPIs.swift in Sources */,
+				6DE93AB6278597790071BE12 /* SuperHeroDetailModel.swift in Sources */,
 				6D3EDAD4277C7BA000F150FD /* SuperHeroDetailPresenter.swift in Sources */,
 				6D3EDAD6277C7C2D00F150FD /* SuperHeroDetailViewProtocol.swift in Sources */,
+				6DE93AB2278493920071BE12 /* SuperHerosAPIs.swift in Sources */,
+				6DE93A9927844D4C0071BE12 /* SuperHeroListInterfaceProtocol.swift in Sources */,
+				6DE93A9D27844F2F0071BE12 /* SuperHeroDetailInterfaceImpl.swift in Sources */,
 				6D3EDA472779CA3200F150FD /* SuperHeroViewController.swift in Sources */,
-				6D3EDA882779F31800F150FD /* SuperHeroServices.swift in Sources */,
+				6D3EDA882779F31800F150FD /* SuperHeroListInterfaceImpl.swift in Sources */,
 				6D3EDA96277A128D00F150FD /* SuperHeroViewProtocol.swift in Sources */,
+				6DE93A9B27844DE40071BE12 /* SuperHeroDetailInterfaceProtocol.swift in Sources */,
 				6D3EDA432779CA3200F150FD /* AppDelegate.swift in Sources */,
+				6DE93AAE278481C00071BE12 /* SuperHeroDetailFactoryProtocol.swift in Sources */,
 				6D3EDADC277C80D600F150FD /* SuperHeroDetailFactory.swift in Sources */,
 				6D3EDAD0277C7B0100F150FD /* SuperHeroDetailsDataSourceProtocol.swift in Sources */,
 				6D3EDA98277A13B200F150FD /* SuperHeroPresenter.swift in Sources */,
 				6D3EDA452779CA3200F150FD /* SceneDelegate.swift in Sources */,
 				6D3EDA8E277A0DF800F150FD /* SuperHeroDataSource.swift in Sources */,
 				6D3EDACE277C7AEA00F150FD /* SuperHeroDetailDataSource.swift in Sources */,
+				6DE93AB4278597490071BE12 /* SuperHeroCellModel.swift in Sources */,
 				6D3EDAD2277C7B7000F150FD /* SuperHeroDetailPresenterProtocol.swift in Sources */,
 				6D3EDAD8277C7C4100F150FD /* SuperHeroDetailViewController.swift in Sources */,
 				6D3EDA862779E9E400F150FD /* SuperHerosModel.swift in Sources */,

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SuperHeroDataSourceProtocol {
-        func getAllHeroes(callBack: @escaping ([RootElement]?) -> Void)
+        func getAllHeroes(callBack: @escaping ([SuperHero]?) -> Void)
 }

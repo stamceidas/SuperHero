@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SuperHeroPresenter : SuperHeroPresenterProtocol {
+final class SuperHeroPresenter : SuperHeroPresenterProtocol {
     
     /* Then presenter has two properties :
      The first one is the dataSource. which is owned by the presenter.
@@ -27,7 +27,12 @@ class SuperHeroPresenter : SuperHeroPresenterProtocol {
     
     func loadHeroes() {
         dataSource.getAllHeroes { heroes in
-            self.view?.updateView(heroes: heroes ?? [])
+            var uiheroes: [SuperHeroCellModel] = []
+            heroes?.forEach{ hero in
+                let hero = SuperHeroCellModel(id: hero.id, name: hero.name, imageUrl: hero.images.xs)
+                uiheroes.append(hero)
+            }
+            self.view?.updateView(heroes: uiheroes)
         }
     }
  

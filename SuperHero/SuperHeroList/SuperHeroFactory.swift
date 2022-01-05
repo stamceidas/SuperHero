@@ -10,9 +10,11 @@ import UIKit
 
 class SuperHeroFactory {
     static func getSuperHeroViewController() -> UIViewController {
-        let dataSource =  SuperHeroDataSource.init()
+        let client = SuperHeroListInterfaceImpl()
+        let dataSource =  SuperHeroDataSource.init(client: client)
         let presenter = SuperHeroPresenter.init(dataSource: dataSource)
-        let vc = SuperHeroViewController.init(with: presenter)
+        let detailFactory = SuperHeroDetailFactoryImpl()
+        let vc = SuperHeroViewController.init(with: presenter, detailFactory: detailFactory)
         return vc
     }
 }

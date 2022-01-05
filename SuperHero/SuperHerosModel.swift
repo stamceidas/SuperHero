@@ -8,10 +8,9 @@
 
 
 import Foundation
-import Networking
 
-// MARK: - RootElement
-public class RootElement: Codable {
+// MARK: - SuperHero
+public struct SuperHero: Codable {
     let id: Int
     let name, slug: String
     let powerstats: Powerstats

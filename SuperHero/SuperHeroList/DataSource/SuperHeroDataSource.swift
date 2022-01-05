@@ -9,21 +9,23 @@ import Foundation
 import Networking
 
 class SuperHeroDataSource: SuperHeroDataSourceProtocol  {
-    
+
+    let client: SuperHeroListInterfaceProtocol?
    // let environment: EnvironmentProtocol
     
-    init(/*environment: EnvironmentProtocol*/) {
+    init(client: SuperHeroListInterfaceProtocol?/*environment: EnvironmentProtocol*/) {
        // self.environment = environment
+        self.client = client
     }
-    func getAllHeroes(callBack: @escaping ([RootElement]?) -> Void) {
-        SuperHeroServices().getAllHeroes { heroes, error in
-            guard let heroes = heroes else {
+    func getAllHeroes(callBack: @escaping ([SuperHero]?) -> Void) {
+        client?.getAllHeroes(parameters: [:]) { heroes, error in
+            if error != nil {
                 print(error ?? "error")
                 callBack(nil)
                 return
             }
             print(heroes.first?.name)
-            callBack(heroes.filter{ $0.id < 20})
+            callBack(heroes)
         }
     }
     
