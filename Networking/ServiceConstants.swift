@@ -11,33 +11,33 @@ enum Environment {
     
     case development
     
-    func baseURL() -> String {
-        return "\(urlProtocol())://\(domain())/\(route())"
+    fileprivate var baseURL: String {
+        return "\(urlProtocol)://\(domain)/\(route)"
     }
     
-    func urlProtocol() -> String {
+    private var urlProtocol: String {
         switch self {
         case .development:
             return "https"
         }
     }
     
-    func domain() -> String {
+    private var domain: String {
         switch self {
         case .development:
             return "cdn.jsdelivr.net"
         }
     }
     
-    func route() -> String {
+    private var route: String {
         return "gh/akabab/superhero-api@0.3.0/api"
     }
     
 }
 
 extension Environment {
-    func host() -> String {
-        return "\(self.domain())"
+    private var host: String {
+        return "\(self.domain)"
     }
 }
 
@@ -49,17 +49,17 @@ let environment: Environment = Environment.development
 let environment: Environment = Environment.development
 #endif
 
-let baseUrl = environment.baseURL()
+let baseUrl = environment.baseURL
 
 public struct Path {
     
     public struct Hero {
         public init() {}
         
-        public var all: String { return "\(baseUrl)/all.json" }
+        public var all: URL? { return URL(string: "\(baseUrl)/all.json") }
         
-        public var getHero: (Int) -> String = { heroID in
-            return "\(baseUrl)/id/\(String(heroID)).json"
+        public var getHero: (Int) -> URL? = { heroID in
+            return URL(string: "\(baseUrl)/id/\(String(heroID)).json")
         }
     }
 }
