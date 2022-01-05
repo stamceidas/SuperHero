@@ -18,7 +18,8 @@ final class SuperHeroDetailInterfaceImpl: SuperHeroDetailInterfaceProtocol {
         apiTaskLoader.loadAPIRequest(requestData: parameters ) { result in
             switch result {
             case .success(let model):
-                completion(model ?? nil, nil)
+                guard let model = model else { return }
+                completion(model , nil)
             case .failure(let error):
                 completion(nil, error)
             }

@@ -45,10 +45,10 @@ struct Biography: Codable {
 }
 
 enum Alignment: String, Codable {
-    case bad = "bad"
+    case bad
     case empty = "-"
-    case good = "good"
-    case neutral = "neutral"
+    case good
+    case neutral
 }
 
 // MARK: - Connections
